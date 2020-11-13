@@ -1,0 +1,30 @@
+@mixin list-style ($margin, $padding, $list-style-type) {
+  margin: $margin;
+  padding: $padding;
+  list-style-type: $list-style-type;
+}
+
+@mixin container-desktop {
+  width: 100%;
+  padding: 0 7.1%;
+}
+
+@mixin container-tablet {
+  width: 100%;
+  padding-left: 5.8%;
+  padding-right: 5.7%;
+}
+
+@mixin container-mobile {
+  width: 100%;
+  padding-left: 4.6%;
+  padding-right: 4%;
+}
+
+@mixin title-desktop {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+

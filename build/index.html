@@ -4,10 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+  <title>ChJewellery</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font">
 </head>
 <body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <header class="page-header">
+    <div class="page-header__wrapper">
+      <button class="page-header__toggle toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--burger" width="25" height="18">
+            <use xlink:href="img/sprite.svg#icon-burger"></use>
+          </svg>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--cross" width="50" height="50">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+      </button>
+      <form class="page-header__form">
+        <button type="submit">
+          <svg width="14" height="14">
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+          <span class="visually-hidden">Search</span>
+        </button>
+        <label>
+          <input type="search" name="search" placeholder="Type here to search">
+        </label>
+      </form>
+      <a class="page-header__logo">
+        <svg width="66" height="66">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <a class="page-header__login">
+        Login
+      </a>
+      <a class="page-header__cart">
+        <span>Cart</span> <span>0</span>
+        <svg width="20" height="18">
+          <use xlink:href="img/sprite.svg#icon-cart"></use>
+        </svg>
+      </a>
+      <ul class="page-header__product-nav">
+        <li>
+          <a>What’s new</a>
+        </li>
+        <li>
+          <a>Chokers</a>
+        </li>
+        <li>
+          <a>Necklaces</a>
+        </li>
+        <li>
+          <a>Rings</a>
+        </li>
+        <li>
+          <a>Earrings</a>
+        </li>
+      </ul>
+      <ul class="page-header__about-nav">
+        <li>
+          <a>About CH</a>
+        </li>
+        <li>
+          <a>Stores & Hours</a>
+        </li>
+        <li>
+          <a>Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="page-main">
+  </main>
+  <footer class="page-footer">
+    <div class="page-footer__subscribe">
+      <h2>The good stuff in&nbsp;your&nbsp;inbox</h2>
+      <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+      <form class="page-footer__form">
+        <label>
+          <input type="email" placeholder="Your E-mail">
+        </label>
+        <button type="submit">
+          <span>Sign Up</span>
+          <svg width="30" height="11">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <ul class="page-footer__info">
+      <li>
+        <a>Ordering & Payment</a>
+      </li>
+      <li>
+        <a>Terms & Conditions</a>
+      </li>
+      <li>
+        <a>Returns & Exchanges</a>
+      </li>
+      <li>
+        <a>Delivery</a>
+      </li>
+    </ul>
+    <ul class="page-footer__about">
+      <li>
+        <a>About CH</a>
+      </li>
+      <li>
+        <a>Stores & Hours</a>
+      </li>
+      <li>
+          <a>Jobs</a>
+      </li>
+      <li>
+        <a>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+    <ul class="page-footer__social">
+      <li>
+        <a>
+          <svg width="15" height="16">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-pinterest"></use>
+          </svg>
+          <span>Pinterest</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="13">
+              <use xlink:href="img/sprite.svg#icon-twitter"></use>
+          </svg>
+          <span>Twitter</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
 </body>
 </html>
