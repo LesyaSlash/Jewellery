@@ -1,12 +1,15 @@
 .faq {
   text-align: center;
+  padding-bottom: 120px;
 
   @media (max-width: $tablet-width) {
     @include container-tablet;
+    padding-bottom: 75px;
   }
 
   @media (max-width: $mobile-width) {
     @include container-mobile;
+    padding-bottom: 60px;
   }
 }
 

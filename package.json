@@ -1,10 +1,10 @@
 {
-  "name": "Liga-A-start-template",
+  "name": "Jewellery",
   "version": "1.0.0",
-  "description": "Стартовый шаблон сборки Лиги А",
+  "description": "Jewellery",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
-    "autoprefixer": "9.5.x",
+    "autoprefixer": "^10.0.2",
     "browser-sync": "2.26.x",
     "eslint": "4.16.0",
     "eslint-config-htmlacademy": "0.4.x",
@@ -13,7 +13,7 @@
     "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "1.2.x",
-    "gulp-postcss": "8.0.x",
+    "gulp-postcss": "^9.0.0",
     "gulp-posthtml": "^3.0.4",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "4.0.x",
@@ -21,6 +21,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
     "pixel-glass": "^1.0.13",
+    "postcss": "^8.1.7",
     "posthtml-include": "^1.2.0",
     "stylelint": "9.10.x",
     "stylelint-config-htmlacademy": "0.1.x"
