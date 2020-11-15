@@ -1,0 +1,122 @@
+.faq {
+  text-align: center;
+
+  @media (max-width: $tablet-width) {
+    @include container-tablet;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include container-mobile;
+  }
+}
+
+.faq h2 {
+  @include title-desktop;
+  margin-top: 0;
+  margin-bottom: 48px;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 28px;
+  }
+}
+
+.faq__list {
+  @include list-style (0 auto, 0, none);
+  width: 71%;
+  border: 1px solid $brown;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.faq__list li{
+  padding: 43px 4.38% 35px;
+  text-align: left;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $brown;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-left: 7.4%;
+    padding-right: 7%;
+    padding-bottom: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 17px;
+    padding-left: 8.5%;
+    padding-bottom: 7px;
+  }
+}
+
+.faq__question {
+  position: relative;
+  margin-bottom: 9px;
+  font-family: $poppins;
+  font-size: 18px;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 17px;
+    height: 10px;
+    background: url("../img/arrow-down.svg") no-repeat;
+    content: "";
+
+    @media (max-width: $tablet-width) {
+      top: 5px;
+      right: 3px;
+      width: 23px;
+      height: 15px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+.faq__answer {
+  display: none;
+  margin-left: 7px;
+  margin-bottom: 5px;
+  width: 58%;
+  font-family: $poppins;
+  font-weight: 400;
+  line-height: 21px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 0;
+    width: 95%;
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 12px;
+    width: 85%;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.faq__item--active .faq__answer,
+.faq__list--no-js .faq__answer {
+  display: block;
+}
+
+.faq__item--active .faq__question,
+.faq__list--no-js .faq__question {
+  &::after {
+    transform: rotate(180deg);
+  }
+}
