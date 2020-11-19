@@ -16,6 +16,8 @@
 
 .blog h2 {
   @include title-desktop;
+  margin-top: 0;
+  margin-bottom: 21px;
 
   @media (max-width: $tablet-width) {
     margin-bottom: 20px;

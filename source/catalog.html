@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <title>ChJewellery catalog</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font">
+</head>
+<body>
+  <header class="page-header page-header--catalog">
+    <div class="page-header__wrapper">
+      <button class="page-header__toggle toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--burger" width="25" height="18">
+            <use xlink:href="img/sprite.svg#icon-burger"></use>
+          </svg>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--cross" width="50" height="50">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+      </button>
+      <form class="page-header__form">
+        <button type="submit">
+          <svg width="14" height="14">
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+          <span class="visually-hidden">Search</span>
+        </button>
+        <label>
+          <input type="search" name="search" placeholder="Type here to search">
+        </label>
+      </form>
+      <a class="page-header__logo">
+        <svg width="66" height="66">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <a class="page-header__login">
+        Login
+      </a>
+      <a class="page-header__cart">
+        <span>Cart</span> <span>0</span>
+        <svg width="20" height="18">
+          <use xlink:href="img/sprite.svg#icon-cart"></use>
+        </svg>
+      </a>
+      <ul class="page-header__product-nav">
+        <li>
+          <a>What’s new</a>
+        </li>
+        <li>
+          <a>Chokers</a>
+        </li>
+        <li>
+          <a>Necklaces</a>
+        </li>
+        <li>
+          <a>Rings</a>
+        </li>
+        <li>
+          <a>Earrings</a>
+        </li>
+      </ul>
+      <ul class="page-header__about-nav">
+        <li>
+          <a>About CH</a>
+        </li>
+        <li>
+          <a>Stores & Hours</a>
+        </li>
+        <li>
+          <a>Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="catalog page-main">
+    <section class="catalog__intro intro">
+      <h2>all jewellery</h2>
+      <p>Discover picks of fashion's finest trends in our jewellery catalog</p>
+    </section>
+    <div class="catalog__wrapper">
+      <section class="catalog__filter filter">
+        <button type="button" class="filter__btn-close">
+          <svg width="14" height="14">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <form>
+          <div class="filter__group">
+            <fieldset class="filter__fieldset filter__fieldset--active">
+              <legend tabindex="0">Product</legend>
+              <ul class="filter__list">
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Necklaces" id="necklaces" checked>
+                  <label for="necklaces">Necklaces</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Chokers" id="chokers" checked>
+                  <label for="chokers">Chokers</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Rings" id="rings">
+                  <label for="rings">Rings</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Earrings" id="earrings" checked>
+                  <label for="earrings">Earrings</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__fieldset">
+              <legend tabindex="0">Material</legend>
+              <ul class="filter__list">
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Necklaces" id="necklaces">
+                  <label for="necklaces">Gold</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Chokers" id="chokers">
+                  <label for="chokers">Silver</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Rings" id="rings">
+                  <label for="rings">Leather</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__fieldset">
+              <legend tabindex="0">Collection</legend>
+              <ul class="filter__list">
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Necklaces" id="necklaces">
+                  <label for="necklaces">New Items</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Chokers" id="chokers">
+                  <label for="chokers">Cosmic</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Rings" id="rings">
+                  <label for="rings">Boho</label>
+                </li>
+                <li>
+                  <input class="checkbox visually-hidden" type="checkbox" name="Earrings" id="earrings">
+                  <label for="earrings">Pearls</label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="filter__fieldset filter__fieldset--active">
+              <legend tabindex="0">Price</legend>
+              <div class="filter__range-slider-track">
+                <div class="filter__range-scale">
+                  <div class="filter__range-bar"></div>
+                </div>
+                <div class="filter__range-pin filter__range-pin--min" tabindex="0"></div>
+                <div class="filter__range-pin filter__range-pin--max" tabindex="0"></div>
+              </div>
+              <div class="filter__price">
+                <label class="filter__price-min" for="price-min">
+                  <span class="visually-hidden">min</span>$</label>
+                  <input type="number" name="price-min" id="price-min" value="55">
+                <label class="filter__price-max" for="price-max">
+                  <span class="visually-hidden">max</span>$</label>
+                <input type="number" name="price-max" id="price-max" value="155">
+              </div>
+            </fieldset>
+          </div>
+          <button class="filter__button filter__button--submit" type="submit">Apply</button>
+          <button class="filter__button filter__button--reset" type="reset">Clear All</button>
+        </form>
+      </section>
+      <section class="catalog__products products">
+        <button type="button" class="catalog__filter-btn">Filter</button>
+        <ul class="products__list">
+          <li class="products__item">
+            <a href="card.html">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/pearl-earrings-mob.jpg 1x, img/pearl-earrings-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/pearl-earrings-tablet.jpg 1x, img/pearl-earrings-tablet@2x.jpg 2x">
+              <img src="img/pearl-earrings-desktop.jpg" srcset="img/pearl-earrings-desktop@2x.jpg 2x" width="270" height="272" alt="Double pearl earrings">
+            </picture>
+            <h3>Double pearl earrings</h3>
+            <p>$ 115</p>
+            </a>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/black-choker-gold-bead-mob.jpg 1x, img/black-choker-gold-bead-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/black-choker-gold-bead-tablet.jpg 1x, img/black-choker-gold-bead-tablet@2x.jpg 2x">
+              <img src="img/black-choker-gold-bead-desktop.jpg" srcset="img/black-choker-gold-bead-desktop@2x.jpg 2x" width="270" height="272" alt="Choker with gold bead">
+            </picture>
+            <h3>Choker with gold bead</h3>
+            <p>$ 55</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/gold-layered-necklace-mob.jpg 1x, img/gold-layered-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/gold-layered-necklace-tablet.jpg 1x, img/gold-layered-necklace-tablet@2x.jpg 2x">
+              <img src="img/gold-layered-necklace.jpg" srcset="gold-layered-necklace@2x.jpg 2x" width="270" height="272" alt="">
+            </picture>
+            <h3>Gold layered necklace</h3>
+            <p>$ 155</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/blue-gemstone-mob.jpg 1x, img/blue-gemstone-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/blue-gemstone-tablet.jpg 1x, img/blue-gemstone-tablet@2x.jpg 2x">
+              <img src="img/blue-gemstone-desktop.jpg" srcset="img/blue-gemstone-desktop@2x.jpg 2x" width="270" height="272" alt="Blue gemstone pendant">
+            </picture>
+            <h3>Blue gemstone pendant</h3>
+            <p>$ 105</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/boho-earrings-mob.jpg 1x, img/boho-earrings-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/boho-earrings-tablet.jpg 1x, img/boho-earrings-tablet@2x.jpg 2x">
+              <img src="img/boho-earrings-desktop.jpg" srcset="img/boho-earrings-desktop@2x.jpg 2x" width="270" height="272" alt="Boho earrings">
+            </picture>
+            <h3>Boho earrings</h3>
+            <p>$ 75</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/bird-necklace-mob.jpg 1x, img/bird-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/bird-necklace-tablet.jpg 1x, img/bird-necklace-tablet@2x.jpg 2x">
+              <img src="img/bird-necklace-desktop.jpg" srcset="img/bird-necklace-desktop@2x.jpg 2x" width="270" height="272" alt="Gold bird necklace">
+            </picture>
+            <h3>Gold bird necklace</h3>
+            <p>$ 135</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/black-leather-choker-necklace-mob.jpg 1x, img/black-leather-choker-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/black-leather-choker-necklace-tablet.jpg 1x, img/black-leather-choker-necklace-tablet@2x.jpg 2x">
+              <img src="img/black-leather-choker-necklace-desktop.jpg" srcset="img/black-leather-choker-necklace-desktop@2x.jpg 2x" width="270" height="272" alt="Black leather choker">
+            </picture>
+            <h3>Black leather choker</h3>
+            <p>$ 85</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/purple-gemstone-necklace-mob.jpg 1x, img/purple-gemstone-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/purple-gemstone-necklace-tablet.jpg 1x, img/purple-gemstone-necklace-tablet@2x.jpg 2x">
+              <img src="img/purple-gemstone-necklace-desktop.jpg" srcset="img/purple-gemstone-necklace-desktop@2x.jpg 2x" width="270" height="272" alt="Necklace with amethyst">
+            </picture>
+            <h3>Necklace with amethyst</h3>
+            <p>$ 145</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/elephant-earrings-mob.jpg 1x, img/elephant-earrings-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/elephant-earrings-tablet.jpg 1x, img/elephant-earrings-tablet@2x.jpg 2x">
+              <img src="img/elephant-earrings-desktop.jpg" srcset="img/elephant-earrings-desktop@2x.jpg 2x" width="270" height="272" alt="Elephant earrings">
+            </picture>
+            <h3>Elephant earrings</h3>
+            <p>$ 95</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/threader-necklace-mob.jpg 1x, img/threader-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/threader-necklace-tablet.jpg 1x, img/threader-necklace-tablet@2x.jpg 2x">
+              <img src="img/threader-necklace-desktop.jpg" srcset="img/threader-necklace-desktop@2x.jpg 2x" width="270" height="272" alt="Threader necklace">
+            </picture>
+            <h3>Threader necklace</h3>
+            <p>$ 115</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/origami-necklace-mob.jpg 1x, img/origami-necklace-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/origami-necklace-tablet.jpg 1x, img/origami-necklace-tablet@2x.jpg 2x">
+              <img src="img/origami-necklace-desktop.jpg" srcset="img/origami-necklace-desktop@2x.jpg 2x" width="270" height="272" alt="">
+            </picture>
+            <h3>Origami crane necklace</h3>
+            <p>$ 105</p>
+          </li>
+          <li class="products__item">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/marble-earrings-mob.jpg 1x, img/marble-earrings-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/marble-earrings-tablet.jpg 1x, img/marble-earrings-tablet@2x.jpg 2x">
+              <img src="img/marble-earrings-desktop.jpg" srcset="img/marble-earrings-desktop@2x.jpg 2x" width="270" height="272" alt="Marble earrings">
+            </picture>
+            <h3>Marble earrings</h3>
+            <p>$ 95</p>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="catalog__navigation">
+      <button>Previous</button>
+        <ul class="catalog__pages">
+          <li class="catalog__page catalog__page--current">1</li>
+          <li class="catalog__page">2</li>
+          <li class="catalog__page">3</li>
+          <li class="catalog__page">4</li>
+          <li class="catalog__page">5</li>
+        </ul>
+      <button>Next</button>
+    </div>
+
+  </main>
+</body>
+  <footer class="page-footer">
+    <div class="page-footer__subscribe">
+      <h2>The good stuff in&nbsp;your&nbsp;inbox</h2>
+      <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+      <form class="page-footer__form">
+        <label>
+          <input type="email" placeholder="Your E-mail">
+        </label>
+        <button type="submit">
+          <span>Sign Up</span>
+          <svg width="30" height="11">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <ul class="page-footer__info">
+      <li>
+        <a>Ordering & Payment</a>
+      </li>
+      <li>
+        <a>Terms & Conditions</a>
+      </li>
+      <li>
+        <a>Returns & Exchanges</a>
+      </li>
+      <li>
+        <a>Delivery</a>
+      </li>
+    </ul>
+    <ul class="page-footer__about">
+      <li>
+        <a>About CH</a>
+      </li>
+      <li>
+        <a>Stores & Hours</a>
+      </li>
+      <li>
+          <a>Jobs</a>
+      </li>
+      <li>
+        <a>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+    <ul class="page-footer__social">
+      <li>
+        <a>
+          <svg width="15" height="16">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-pinterest"></use>
+          </svg>
+          <span>Pinterest</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="13">
+              <use xlink:href="img/sprite.svg#icon-twitter"></use>
+          </svg>
+          <span>Twitter</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+</body>
+</html>

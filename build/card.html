@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <title>ChJewellery catalog</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font">
+</head>
+<body>
+  <header class="page-header page-header--card">
+    <div class="page-header__wrapper">
+      <button class="page-header__toggle toggle" type="button">
+        <span class="visually-hidden">Открыть меню</span>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--burger" width="25" height="18">
+            <use xlink:href="img/sprite.svg#icon-burger"></use>
+          </svg>
+          <svg class="page-header__toggle-icon page-header__toggle-icon--cross" width="50" height="50">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+      </button>
+      <form class="page-header__form">
+        <button type="submit">
+          <svg width="14" height="14">
+          <use xlink:href="img/sprite.svg#search"></use>
+        </svg>
+          <span class="visually-hidden">Search</span>
+        </button>
+        <label>
+          <input type="search" name="search" placeholder="Type here to search">
+        </label>
+      </form>
+      <a class="page-header__logo">
+        <svg width="66" height="66">
+          <use xlink:href="img/sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <a class="page-header__login">
+        Login
+      </a>
+      <a class="page-header__cart">
+        <span>Cart</span> <span>0</span>
+        <svg width="20" height="18">
+          <use xlink:href="img/sprite.svg#icon-cart"></use>
+        </svg>
+      </a>
+      <ul class="page-header__product-nav">
+        <li>
+          <a>What’s new</a>
+        </li>
+        <li>
+          <a>Chokers</a>
+        </li>
+        <li>
+          <a>Necklaces</a>
+        </li>
+        <li>
+          <a>Rings</a>
+        </li>
+        <li>
+          <a>Earrings</a>
+        </li>
+      </ul>
+      <ul class="page-header__about-nav">
+        <li>
+          <a>About CH</a>
+        </li>
+        <li>
+          <a>Stores & Hours</a>
+        </li>
+        <li>
+          <a>Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main class="page-main">
+    <section class="card">
+      <div class="card__gallery">
+        <span>1 of 4</span>
+        <ul class="card__photos card__photos--small">
+          <li>
+            <picture>
+                <source media="(max-width: 1023px)" srcset="img/necklace-1-tablet.jpg 1x, img/necklace-1-tablet@2x.jpg 2x">
+                <img src="img/necklace-1-desktop.jpg" srcset="img/necklace-1-desktop@2x.jpg 2x" width="100px" height="125px" alt="Necklace preview 1">
+            </picture>
+          </li>
+          <li>
+            <picture>
+                <source media="(max-width: 1023px)" srcset="img/necklace-2-tablet.jpg 1x, img/necklace-2-tablet@2x.jpg 2x">
+                <img src="img/necklace-2-desktop.jpg" srcset="img/necklace-2-desktop@2x.jpg 2x" width="100px" height="125px" alt="Necklace preview 2">
+            </picture>
+          </li>
+          <li>
+            <picture>
+                <source media="(max-width: 1023px)" srcset="img/necklace-3-tablet.jpg 1x, img/necklace-3-tablet@2x.jpg 2x">
+                <img src="img/necklace-3-desktop.jpg" srcset="img/necklace-3-desktop@2x.jpg 2x" width="100px" height="125px" alt="Necklace preview 3">
+            </picture>
+          </li>
+        </ul>
+        <div class="card__photos card__photos--large">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/necklace-large-mob.jpg 1x, img/necklace-large-mob@2x.jpg 2x">
+              <source media="(max-width: 1023px)" srcset="img/necklace-large-tablet.jpg 1x, img/necklace-large-tablet@2x.jpg 2x">
+              <img src="img/necklace-large-desktop.jpg" srcset="img/necklace-large-desktop@2x.jpg 2x" width="470px" height="435px" alt="Necklace photo">
+            </picture>
+        </div>
+      </div>
+      <div class="card__wrapper">
+        <div class="card__info">
+          <h2>Gold Necklace </h2>
+          <p>$ 115</p>
+          <div class="card__info-tabs">
+            <button type="button" class="card__info-link">Description</button>
+            <button type="button" class="card__info-link card__info-link--active">Additional info</button>
+          </div>
+          <div class="card__info-additional">
+            <dl class="card__info-list">
+              <dt>Metal type</dt>
+              <dd>Gold 585</dd>
+            </dl>
+            <dl class="card__info-list">
+              <dt>Stone</dt>
+              <dd>Turquoise</dd>
+            </dl>
+            <dl class="card__info-list">
+              <dt>Size</dt>
+              <dd>18” / 20”</dd>
+            </dl>
+          </div>
+
+        </div>
+        <div class="card__cart">
+          <a href="#">Add to cart</a>
+          <p>
+            <span>14 Day Returns</span>
+            <span>2-Year Warranty</span>
+            <span>Free Shipping</span>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="promo promo--card">
+      <h2>You May Also Like</h2>
+      <a href="catalog.html">Shop Now</a>
+      <div class="promo__slider promo__slider--card">
+        <button class="promo__toggle promo__toggle--prev slider__control slider__control_prev" type="button" aria-label="Предыдущий отзыв" tabindex="-1">
+        </button>
+        <button class="promo__toggle promo__toggle--next slider__control slider__control_next" type="button" aria-label="Следующий отзыв" tabindex="-1">
+        </button>
+        <ul class="promo__list">
+        <li class="promo__item">
+          <img src="img/purple-gemstone-desktop.jpg" srcset="img/purple-gemstone-desktop@2x.jpg 2x" width="270" height="284" alt="Purple gemstone photo">
+          <h3>Necklace with amethyst</h3>
+          <p>$ 145</p>
+        </li>
+        <li class="promo__item">
+          <img src="img/layered-choker-desktop.jpg" srcset="img/layered-choker-desktop@2x.jpg 2x" width="270" height="284" alt="Layered choker necklace">
+          <h3>Layered сhoker</h3>
+          <p>$ 115</p>
+        </li>
+        <li class="promo__item">
+          <img src="img/dainty-gold-necklace-desktop.jpg" srcset="img/dainty-gold-necklace-desktop@2x.jpg 2x" width="270" height="284" alt="Dainty gold necklace">
+          <h3>Gold chain</h3>
+          <p>$ 215</p>
+        </li>
+        <li class="promo__item">
+          <img src="img/galaxy-earrings-desktop.jpg" srcset="img/galaxy-earrings-desktop@2x.jpg 2x" width="270" height="284" alt="Galaxy earrings">
+          <h3>Galaxy earrings</h3>
+          <p>$ 95</p>
+        </li>
+        </ul>
+        <ul class="promo__indicators">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+        </ul>
+        <p><span>1</span> of 6</p>
+      </div>
+    </section>
+  </main>
+</body>
+  <footer class="page-footer">
+    <div class="page-footer__subscribe">
+      <h2>The good stuff in&nbsp;your&nbsp;inbox</h2>
+      <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
+      <form class="page-footer__form">
+        <label>
+          <input type="email" placeholder="Your E-mail">
+        </label>
+        <button type="submit">
+          <span>Sign Up</span>
+          <svg width="30" height="11">
+            <use xlink:href="img/sprite.svg#arrow"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <ul class="page-footer__info">
+      <li>
+        <a>Ordering & Payment</a>
+      </li>
+      <li>
+        <a>Terms & Conditions</a>
+      </li>
+      <li>
+        <a>Returns & Exchanges</a>
+      </li>
+      <li>
+        <a>Delivery</a>
+      </li>
+    </ul>
+    <ul class="page-footer__about">
+      <li>
+        <a>About CH</a>
+      </li>
+      <li>
+        <a>Stores & Hours</a>
+      </li>
+      <li>
+          <a>Jobs</a>
+      </li>
+      <li>
+        <a>
+          Contact Us
+        </a>
+      </li>
+    </ul>
+    <ul class="page-footer__social">
+      <li>
+        <a>
+          <svg width="15" height="16">
+              <use xlink:href="img/sprite.svg#icon-facebook"></use>
+          </svg>
+          <span>Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-instagram"></use>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="15">
+              <use xlink:href="img/sprite.svg#icon-pinterest"></use>
+          </svg>
+          <span>Pinterest</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <svg width="15" height="13">
+              <use xlink:href="img/sprite.svg#icon-twitter"></use>
+          </svg>
+          <span>Twitter</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <div class="cart modal">
+    <div class="cart__wrapper modal__wrapper">
+      <svg class="page-header__toggle-icon page-header__toggle-icon--cross" width="50" height="50">
+        <use xlink:href="img/sprite.svg#icon-close"></use>
+      </svg>
+      <h2>The item was added to your cart</h2>
+      <div class="cart__product">
+        <picture>
+          <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-mob@2x.jpg 2x">
+          <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-tablet@2x.jpg 2x">
+          <img src="img/necklace-cart-desktop.jpg" srcset="img/necklace-cart-desktop@2x.jpg">
+        </picture>
+        <div class="cart__info">
+          <h3>Gold Necklace </h3>
+          <p>$ 115</p>
+        </div>
+        <div>
+          <button type="button" aria-label="Plus button">
+            <svg width="14" height="14">
+             <use xlink:href="img/sprite.svg#icon-plus"></use>
+            </svg>
+          </button>
+          <span>1</span>
+          <button type="button" aria-label="Minus button">
+            <svg width="14" height="14">
+             <use xlink:href="img/sprite.svg#icon-minus"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="cart__total">
+        <p>You have 1 item in the cart</p>
+        <p>Cart subtotal: $ 115</p>
+      </div>
+      <div class="cart__buttons">
+        <a href="catalog.html">Continue shopping</a>
+        <a href="cart.html">Checkout</a>
+      </div>
+    </div>
+  </div>
+
+</html>

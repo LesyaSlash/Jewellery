@@ -27,4 +27,14 @@
   letter-spacing: 1px;
 }
 
-
+@mixin buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 68px;
+  font-family: $poppins;
+  font-size: 16px;
+  font-weight: 500;
+  border: solid 1px #a87b62;
+}

@@ -132,6 +132,14 @@
   }
 }
 
+.page-header--card .page-header__logo,
+.page-header--catalog .page-header__logo {
+  @media (min-width: $desktop-width-only) {
+    margin-top: -11px;
+    margin-bottom: 24px;
+  }
+}
+
 .page-header__logo svg {
   @media (max-width: $mobile-width) {
     width: 52px;
