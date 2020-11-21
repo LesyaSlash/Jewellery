@@ -171,7 +171,7 @@
     </section>
     <section class="faq">
       <h2>Frequently asked questions</h2>
-      <ul class="faq__list  accordion">
+      <ul class="faq__list faq__list--no-js accordion">
         <li class="faq__item faq__item--active">
           <div class="faq__question">What materials are the&nbsp;jewellery made of?</div>
           <div class="faq__answer">Our jewellerry is made of solid gold, silver or leather.
@@ -341,5 +341,29 @@
       </li>
     </ul>
   </footer>
+  <div class="login modal">
+    <div class="login__wrapper modal__wrapper">
+      <button class="modal__toggle" type="button">
+        <span class="visually-hidden">Закрыть</span>
+        <svg class="modal__icon modal__icon--close" width="14" height="14">
+          <use xlink:href="img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <h2>Log In</h2>
+      <form class="login__form">
+        <label class="visually-hidden" for="mail">Your E-mail</label>
+        <input type="email" name="main" id="mail" placeholder="Your E-mail" required>
+        <label class="visually-hidden" for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="login__signup">
+        <p>Don’t have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -134,7 +134,7 @@
 
         </div>
         <div class="card__cart">
-          <a href="#">Add to cart</a>
+          <a class="card__add" href="#">Add to cart</a>
           <p>
             <span>14 Day Returns</span>
             <span>2-Year Warranty</span>
@@ -267,23 +267,49 @@
       </li>
     </ul>
   </footer>
+  <div class="login modal">
+    <div class="login__wrapper modal__wrapper">
+      <button class="modal__toggle" type="button">
+        <span class="visually-hidden">Закрыть</span>
+        <svg class="modal__icon modal__icon--close" width="14" height="14">
+          <use xlink:href="img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <h2>Log In</h2>
+      <form class="login__form">
+        <label class="visually-hidden" for="mail">Your E-mail</label>
+        <input type="email" name="main" id="mail" placeholder="Your E-mail" required>
+        <label class="visually-hidden" for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="login__signup">
+        <p>Don’t have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
+    </div>
+  </div>
   <div class="cart modal">
     <div class="cart__wrapper modal__wrapper">
-      <svg class="page-header__toggle-icon page-header__toggle-icon--cross" width="50" height="50">
-        <use xlink:href="img/sprite.svg#icon-close"></use>
-      </svg>
+      <button class="modal__toggle" type="button">
+        <span class="visually-hidden">Закрыть</span>
+        <svg class="modal__icon modal__icon--close" width="14" height="14">
+          <use xlink:href="img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
       <h2>The item was added to your cart</h2>
       <div class="cart__product">
         <picture>
           <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-mob@2x.jpg 2x">
           <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-tablet@2x.jpg 2x">
-          <img src="img/necklace-cart-desktop.jpg" srcset="img/necklace-cart-desktop@2x.jpg">
+          <img src="img/necklace-cart-desktop.jpg" srcset="img/necklace-cart-desktop@2x.jpg" width="84" height="79" alt="Product photo">
         </picture>
         <div class="cart__info">
           <h3>Gold Necklace </h3>
           <p>$ 115</p>
         </div>
-        <div>
+        <div class="cart__amount">
           <button type="button" aria-label="Plus button">
             <svg width="14" height="14">
              <use xlink:href="img/sprite.svg#icon-plus"></use>
@@ -307,5 +333,6 @@
       </div>
     </div>
   </div>
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,68 @@
+.login {
+  background-color: $white;
+}
+
+.login__wrapper {
+  width: 430px;
+  padding: 189px 45px 60px;
+  background: $beige url("../img/login-bg-desktop.jpg") no-repeat top center;
+}
+
+.login__wrapper h2 {
+  margin-top: 0;
+  margin-bottom: 33px;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+.login__form input{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $dark;
+
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  &::placeholder {
+    font-family: $poppins;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey;
+  }
+}
+
+.login__form a {
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.login__form button {
+  @include buttons;
+  margin-top: 45px;
+  margin-bottom: 17px;
+  width: 100%;
+  color: $white;
+  background-color: $brown;
+}
+
+.login__signup {
+  display: flex;
+  justify-content: center;
+  font-family: $poppins;
+  font-size: 14px;
+}
+
+.login__signup p {
+  margin: 0 12px 0 0;
+  color: $grey;
+}
+
+.login__signup a {
+  color: $dark;
+}

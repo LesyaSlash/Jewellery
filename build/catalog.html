@@ -123,10 +123,6 @@
                   <input class="checkbox visually-hidden" type="checkbox" name="Chokers" id="chokers">
                   <label for="chokers">Silver</label>
                 </li>
-                <li>
-                  <input class="checkbox visually-hidden" type="checkbox" name="Rings" id="rings">
-                  <label for="rings">Leather</label>
-                </li>
               </ul>
             </fieldset>
             <fieldset class="filter__fieldset">
@@ -134,19 +130,11 @@
               <ul class="filter__list">
                 <li>
                   <input class="checkbox visually-hidden" type="checkbox" name="Necklaces" id="necklaces">
-                  <label for="necklaces">New Items</label>
+                  <label for="necklaces">Pink flamingo</label>
                 </li>
                 <li>
                   <input class="checkbox visually-hidden" type="checkbox" name="Chokers" id="chokers">
-                  <label for="chokers">Cosmic</label>
-                </li>
-                <li>
-                  <input class="checkbox visually-hidden" type="checkbox" name="Rings" id="rings">
-                  <label for="rings">Boho</label>
-                </li>
-                <li>
-                  <input class="checkbox visually-hidden" type="checkbox" name="Earrings" id="earrings">
-                  <label for="earrings">Pearls</label>
+                  <label for="chokers">Dreams</label>
                 </li>
               </ul>
             </fieldset>
@@ -384,5 +372,29 @@
       </li>
     </ul>
   </footer>
+  <div class="login modal">
+    <div class="login__wrapper modal__wrapper">
+      <button class="modal__toggle" type="button">
+        <span class="visually-hidden">Закрыть</span>
+        <svg class="modal__icon modal__icon--close" width="14" height="14">
+          <use xlink:href="img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <h2>Log In</h2>
+      <form class="login__form">
+        <label class="visually-hidden" for="mail">Your E-mail</label>
+        <input type="email" name="main" id="mail" placeholder="Your E-mail" required="">
+        <label class="visually-hidden" for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password" required="">
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="login__signup">
+        <p>Don’t have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
 
 </html>
