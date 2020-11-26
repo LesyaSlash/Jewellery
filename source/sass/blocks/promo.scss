@@ -3,6 +3,19 @@
   padding-top: 114px;
   padding-bottom: 114px;
   text-align: center;
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    @include container-tablet;
+    padding-top: 71px;
+    padding-bottom: 65px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include container-mobile;
+    padding-top: 61px;
+    padding-bottom: 56px;
+  }
 
   &--card {
     padding-top: 0;
@@ -15,6 +28,10 @@
   margin-top: 0;
   margin-bottom: 22px;
   letter-spacing: normal;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .promo a {
@@ -25,28 +42,58 @@
 
 .promo__slider {
   position: relative;
-  padding-top: 60px;
+  padding-top: 61px;
+  overflow: hidden;
+  /* Fix of Webkit flickering */
+  z-index: 1;
 
   &--card {
     padding-top: 64px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 54px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 44px;
   }
 }
 
 .promo__toggle {
   position: absolute;
-  top: -49px;
+  top: 152px;
   width: 30px;
   height: 11px;
   background: url("../img/arrow.svg") no-repeat;
   border: none;
+  cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    top: 113px;
+    width: 36px;
+    height: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 
   &--prev {
-    left: -15px;
+    left: 82px;
+
+    @media (max-width: $tablet-width) {
+      left: 45px;
+    }
   }
 
   &--next {
-    right: 0;
+    right: 97px;
     transform: rotate(180deg);
+
+    @media (max-width: $tablet-width) {
+      right: 43px;
+    }
   }
 }
 
@@ -61,14 +108,35 @@
 .promo__list {
   @include list-style (0, 0, none);
   display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition-property: transform;
+  box-sizing: content-box;
 }
 
 .promo__item {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
   text-align: center;
 
   &:not(:last-of-type) {
     margin-right: auto;
   }
+}
+
+.promo__item img {
+  @media (max-width: $tablet-width) {
+    width: 324px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 130px;
+   }
 }
 
 .promo__item h3 {
@@ -78,6 +146,10 @@
   font-size: 16px;
   line-height: 1.3;
   font-weight: 500;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 17px;
+  }
 }
 
 .promo__item p {
@@ -88,21 +160,37 @@
 }
 
 .promo__indicators {
-  @include list-style(54px 0 0, 0, none);
+  margin-top: 54px;
   display: flex;
   justify-content: center;
-}
 
-.promo__indicators li {
-  font-family: $poppins;
-  font-weight: 500;
-
-  &:nth-of-type(n+4) {
-    display: none;
+  @media (max-width: $tablet-width) {
+    margin-top: 22px;
   }
 
-  &:not(:nth-of-type(3n)) {
-    margin-right: 15px;
+  @media (max-width: $mobile-width) {
+    margin-top: 33px;
+    font-family: $poppins;
+  }
+}
+
+.promo__indicators span {
+  font-family: $poppins;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:not(:last-of-type) {
+    margin-right: 13px;
+
+    @media (max-width: $mobile-width) {
+      margin-right: 10px;
+    }
+  }
+
+  &:last-of-type {
+    @media (max-width: $mobile-width) {
+      margin-left: 10px;
+    }
   }
 }
 
