@@ -1,10 +1,42 @@
 'use strict';
+// ---------- меню и модалки -----------
 (function () {
   var modalLoginOpen = document.querySelector('.page-header__login');
   var modalCartOpen = document.querySelector('.card__add');
   var modalLoginOverlay = document.querySelector('.login');
   var modalCartOverlay = document.querySelector('.cart');
   var body = document.querySelector('body');
+  var pageHeader = document.querySelector('.page-header');
+  var headerToggle = document.querySelector('.page-header__toggle');
+
+  // функция закрытия меню
+  var closeMenu = function () {
+    pageHeader.classList.remove('page-header--opened-menu');
+    pageHeader.classList.add('page-header--closed-menu');
+    body.classList.remove('modal__scroll-hidden');
+  };
+
+  // функция открытия меню
+  var openMenu = function () {
+    pageHeader.classList.remove('page-header--closed-menu');
+    pageHeader.classList.add('page-header--opened-menu');
+    body.classList.add('modal__scroll-hidden');
+  };
+
+  // открытие/закрытие меню по нажатию на кнопку
+  if (headerToggle) {
+    pageHeader.classList.remove('page-header--no-js');
+    pageHeader.classList.add('page-header--closed-menu');
+
+    headerToggle.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      if (pageHeader.classList.contains('page-header--closed-menu')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+  }
 
   // функция закрытия модалок
   var closeModal = function (modal) {
@@ -131,7 +163,6 @@
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      // when window width is >= 320px
       320: {
         slidesPerView: 2,
         slidesPerGroup: 2,
@@ -145,7 +176,6 @@
           }
         },
       },
-      // when window width is >= 768px
       768: {
         slidesPerView: 2,
         slidesPerGroup: 2,

@@ -17,7 +17,7 @@
 .blog h2 {
   @include title-desktop;
   margin-top: 0;
-  margin-bottom: 21px;
+  margin-bottom: 18px;
 
   @media (max-width: $tablet-width) {
     margin-bottom: 20px;
@@ -25,19 +25,25 @@
 }
 
 .blog a {
+  padding-bottom: 4px;
   font-family: $poppins;
-  padding-bottom: 2px;
+  color: inherit;
   border-bottom: 1px solid $brown;
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 2px;
+  }
 }
 
 .blog__articles {
   display: flex;
   justify-content: space-between;
-  margin-top: 64px;
+  margin-top: 66px;
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: 1300px) {
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 64px;
   }
 
   @media (max-width: $mobile-width) {
@@ -47,6 +53,10 @@
 
 .blog__wrapper {
   width: 48.75%;
+
+  @media (max-width: 1300px) {
+    width: 570px;
+  }
 
   @media (max-width: $tablet-width) {
     width: 100%;
@@ -61,24 +71,27 @@
   }
 
   @media (max-width: $mobile-width) {
-    flex-direction: column;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
 .blog__wrapper .blog__article {
   width: 100%;
+  margin-bottom: 30px;
 
   &:nth-child(2n) {
     flex-direction: row-reverse;
 
     @media (max-width: $mobile-width) {
-      flex-direction: column;
+      flex-direction: row;
     }
   }
 
-  &:not(:last-child) {
-    @media (min-width: $desktop-width-only) {
-      margin-bottom: 30px;
+  &:last-child {
+    @media (min-width: 1301px) {
+      margin-bottom: 0;
     }
   }
 
@@ -125,7 +138,8 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding: 45px 21% 51px;
+    max-width: 295px;
+    padding: 45px 61px 51px;
   }
 }
 
@@ -143,9 +157,10 @@
     padding-top: 84px;
   }
 
-  @media (max-width: $tablet-width) {
+  @media (max-width: $mobile-width) {
     padding-top: 62px;
     padding-bottom: 67px;
+    width: 295;
   }
 }
 

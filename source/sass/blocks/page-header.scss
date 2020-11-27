@@ -118,6 +118,7 @@
     border-radius: 21px;
   }
 }
+
 .page-header__logo {
   align-self: flex-start;
   margin-left: 26.7%;
@@ -150,11 +151,13 @@
 .page-header__login {
   margin-top: 13px;
   font-size: 14px;
+  color: inherit;
 
   @media (max-width: $tablet-width) {
     display: none;
     /*стили для открытого меню*/
     order: 6;
+    font-family: $poppins;
     font-size: 18px;
     color: $white;
   }
@@ -165,6 +168,7 @@
   margin-left: 2.6%;
   margin-right: 7.1%;
   font-size: 14px;
+  color: inherit;
   stroke: $dark;
 
   @media (max-width: $tablet-width) {
@@ -206,6 +210,7 @@
       order: 4;
       margin-bottom: 40px;
       padding: 0;
+      font-family: $poppins;
       font-size: 24px;
       line-height: 36px;
       color: $white;
@@ -234,13 +239,14 @@
     order: 5;
     margin-bottom: 32px;
     width: 100%;
+    font-family: $poppins;
     font-size: 18px;
     color: $white;
     opacity: 0.75;
   }
-@media (max-width: $mobile-width) {
-  margin-bottom: 22px;
-}
+  @media (max-width: $mobile-width) {
+    margin-bottom: 22px;
+  }
 }
 
 .page-header__about-nav li:not(:last-child) {
@@ -248,15 +254,35 @@
     margin-bottom: 20px;
   }
 }
+
+.page-header__product-nav a,
+.page-header__about-nav a {
+  color: inherit;
+}
+
 .page-header--no-js,
 .page-header--opened-menu {
   @media (max-width: $tablet-width) {
-    background-color: $brown;
+    @include container-tablet;
+    padding-top: 30px;
     padding-bottom: 75px;
+    background-color: $brown;
   }
 
   @media (max-width: $mobile-width) {
+    @include container-mobile;
+    padding-top: 20px;
     padding-bottom: 45px;
+  }
+}
+
+.page-header--opened-menu {
+  @media (max-width: $tablet-width) {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow-y: scroll;
   }
 }
 

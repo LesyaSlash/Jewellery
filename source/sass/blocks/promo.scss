@@ -32,12 +32,20 @@
   @media (max-width: $tablet-width) {
     margin-bottom: 20px;
   }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 19px;
+  }
 }
 
 .promo a {
   font-family: $poppins;
   color: $dark;
   border-bottom: 1px solid $brown;
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 3px;
+  }
 }
 
 .promo__slider {
@@ -136,6 +144,7 @@
 
   @media (max-width: $mobile-width) {
     width: 130px;
+    margin: 0 auto;
    }
 }
 
@@ -165,7 +174,7 @@
   justify-content: center;
 
   @media (max-width: $tablet-width) {
-    margin-top: 22px;
+    margin-top: 42px;
   }
 
   @media (max-width: $mobile-width) {
