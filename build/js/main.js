@@ -1,5 +1,5 @@
 'use strict';
-// ---------- меню и модалки -----------
+// ---------- меню, фильтр и модалки -----------
 (function () {
   var modalLoginOpen = document.querySelector('.page-header__login');
   var modalCartOpen = document.querySelector('.card__add');
@@ -8,6 +8,8 @@
   var body = document.querySelector('body');
   var pageHeader = document.querySelector('.page-header');
   var headerToggle = document.querySelector('.page-header__toggle');
+  var filterOverlay = document.querySelector('.catalog__filter');
+  var filterOpen = document.querySelector('.catalog__filter-btn');
 
   // функция закрытия меню
   var closeMenu = function () {
@@ -38,7 +40,7 @@
     });
   }
 
-  // функция закрытия модалок
+  // функция закрытия модалок и фильтра
   var closeModal = function (modal) {
     modal.classList.remove('modal--open');
     document.removeEventListener('keydown', popupEscPressHandler);
@@ -65,10 +67,12 @@
     if (evt.keyCode === 27) {
       evt.preventDefault();
       scrollOn();
-      if (modalLoginOverlay.classList.contains('modal--open')) {
+      if (modalLoginOverlay && modalLoginOverlay.classList.contains('modal--open')) {
         closeModal(modalLoginOverlay);
-      } else if (modalCartOverlay.classList.contains('modal--open')) {
+      } else if (modalCartOverlay && modalCartOverlay.classList.contains('modal--open')) {
         closeModal(modalCartOverlay);
+      } else if (filterOverlay && filterOverlay.classList.contains('modal--open')) {
+        closeModal(filterOverlay);
       }
     }
   };
@@ -129,88 +133,208 @@
       scrollOn();
     });
   }
+
+  if (filterOverlay) {
+    var filter = filterOverlay.querySelector('.filter');
+    var filterClose = filter.querySelector('.filter__btn-close');
+
+    filter.addEventListener('click', function (evt) {
+      onlyOverlayClick(evt);
+    });
+
+    filterOpen.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      openModal(filterOverlay);
+      scrollOff();
+    });
+
+    filterOverlay.addEventListener('click', function () {
+      closeModal(filterOverlay);
+      scrollOn();
+    });
+
+    filterClose.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      closeModal(filterOverlay);
+      scrollOn();
+    });
+  }
+
+  // -----отправка формы и открытие окна успешной отправки------
+  var loginForm = document.querySelector('.login__form');
+  var subscribeForm = document.querySelector('.page-footer__form');
+  var URL = 'https://echo.htmlacademy.ru';
+  var isStorageSupport = true;
+
+  var upload = function (data, successHandler) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', function () {
+      successHandler(xhr.response);
+    });
+
+    xhr.open('POST', URL);
+    xhr.responseType = 'json';
+    xhr.send(data);
+  };
+
+  var uploadSuccessHandler = function () {
+    if (modalLoginOverlay) {
+      closeModal(modalLoginOverlay);
+    } else {
+      return;
+    }
+  };
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      var mail = loginForm.querySelector('[name=mail]');
+      upload(new FormData(loginForm), uploadSuccessHandler);
+      if (isStorageSupport) {
+        localStorage.setItem('mail', mail.value);
+      }
+      loginForm.reset();
+    });
+  }
+
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+      var mail = subscribeForm.querySelector('[name=mail]');
+      upload(new FormData(subscribeForm), uploadSuccessHandler);
+      if (isStorageSupport) {
+        localStorage.setItem('mail', mail.value);
+      }
+      subscribeForm.reset();
+    });
+  }
 })();
 
 (function () {
 // -------------аккордеон---------------------
 
-  var accordion = document.querySelector('.faq__list');
+  var accordionFaq = document.querySelector('.faq__list');
+  var accordionFilter = document.querySelector('.filter__group');
 
-  var accordionCallback = function (evt) {
+  var accordionFaqCallback = function (evt) {
     var parent = evt.target.parentElement;
     parent.classList.toggle('faq__item--active');
   };
 
-  if (accordion) {
-    accordion.classList.remove('faq__list--no-js');
+  if (accordionFaq) {
+    accordionFaq.classList.remove('faq__list--no-js');
 
-    var accordionQuestions = accordion.querySelectorAll('.faq__question');
+    var accordionQuestions = accordionFaq.querySelectorAll('.faq__question');
     for (var j = 0; j < accordionQuestions.length; j++) {
       var item = accordionQuestions[j];
-      item.addEventListener('click', accordionCallback);
+      item.addEventListener('click', accordionFaqCallback);
+    }
+  }
+
+  var accordionFilterCallback = function (evt) {
+    var parent = evt.target.parentElement;
+    parent.classList.toggle('filter__fieldset--active');
+  };
+
+  if (accordionFilter) {
+    var accordionFilters = accordionFilter.querySelectorAll('legend');
+    for (var k = 0; k < accordionFilters.length; k++) {
+      var filter = accordionFilters[k];
+      filter.addEventListener('click', accordionFilterCallback);
+    }
+  }
+})();
+
+// ---------------табы------------------
+(function () {
+  var tabButtons = document.querySelectorAll('.card__tab');
+
+  if (tabButtons.length > 0) {
+    var tabsHandler = function (evt) {
+      evt.preventDefault();
+      var link = evt.currentTarget.querySelector('a');
+      var tab = document.querySelector(link.getAttribute('href'));
+      var activeTab = document.querySelector('.card__tab--active');
+
+      activeTab.classList.remove('card__tab--active');
+      document.querySelector('.card__tab-content--active')
+          .classList.remove('card__tab-content--active');
+
+      evt.currentTarget.classList.add('card__tab--active');
+      tab.classList.add('card__tab-content--active');
+    };
+
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].addEventListener('click', tabsHandler);
     }
   }
 })();
 
 // -------------swiper---------------------
 (function () {
-  var swiper = new Swiper('.swiper-container', {// eslint-disable-line
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    spaceBetween: 30,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-          renderFraction: function (currentClass, totalClass) {
-            return '<span class="' + currentClass + '"></span>' +
-              ' of ' +
-              '<span class="' + totalClass + '"></span>';
-          }
-        },
+  var slider = document.querySelector('.slider');
+  var createSwiper = function () {
+    var swiper = new Swiper('.swiper-container', {// eslint-disable-line
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class=' + className + '>' + (index + 1) + '</span>';
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+              return '<span class="' + currentClass + '"></span>' +
+                ' of ' +
+                '<span class="' + totalClass + '"></span>';
+            }
           },
         },
-      },
-      1024: {
-      // when window width is >= 1024px
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class=' + className + '>' + (index + 1) + '</span>';
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class=' + className + '>' + (index + 1) + '</span>';
+            },
           },
         },
-      },
-      1252: {
-        // when window width is >= 1252px
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class=' + className + '>' + (index + 1) + '</span>';
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class=' + className + '>' + (index + 1) + '</span>';
+            },
           },
         },
-      }
-    },
-  });
+        1252: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class=' + className + '>' + (index + 1) + '</span>';
+            },
+          },
+        }
+      },
+    });
+  };
+
+  if (slider) {
+    createSwiper();
+  }
 })();

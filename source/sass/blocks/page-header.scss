@@ -2,6 +2,11 @@
   padding-top: 41px;
   font-family: $poppins;
 
+  @media (min-width: $desktop-width-only) {
+    // for IE11
+    min-height: 187px;
+  }
+
   @media (max-width: $tablet-width) {
     @include container-tablet;
     padding-top: 30px;
@@ -22,10 +27,10 @@
   align-content: flex-start;
   align-items: flex-start;
 
-    @media (max-width: $tablet-width) {
-      justify-content: space-between;
-      align-items: center;
-    }
+  @media (max-width: $tablet-width) {
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .page-header__toggle {
@@ -45,7 +50,6 @@
 .page-header__toggle-icon--cross {
   @media (max-width: $tablet-width) {
     display: none;
-
   }
 }
 
@@ -85,6 +89,18 @@
 }
 
 .page-header__form svg {
+  &:hover {
+    @media (min-width: $desktop-width-only) {
+      fill: $brown;
+    }
+  }
+
+  &:active {
+    @media (min-width: $desktop-width-only) {
+      opacity: 0.7;
+    }
+  }
+
   @media (max-width: $tablet-width) {
     fill: $white;
     height: 16px;
@@ -151,7 +167,17 @@
 .page-header__login {
   margin-top: 13px;
   font-size: 14px;
+  line-height: 18px;
   color: inherit;
+
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    color: $brown;
+    opacity: 0.7;
+  }
 
   @media (max-width: $tablet-width) {
     display: none;
@@ -168,8 +194,18 @@
   margin-left: 2.6%;
   margin-right: 7.1%;
   font-size: 14px;
+  line-height: 18px;
   color: inherit;
   stroke: $dark;
+
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    color: $brown;
+    opacity: 0.7;
+  }
 
   @media (max-width: $tablet-width) {
     order: 2;
@@ -198,28 +234,41 @@
 }
 
 .page-header__product-nav {
-  @include list-style(0, 21px 20px 20px 30px, none);
+  @include list-style(0, 21px 20px 16px 30px, none);
   display: flex;
   justify-content: center;
   width: 100%;
+  line-height: normal;
   border-top: 1px solid #f6f5f4;
 
-    @media (max-width: $tablet-width) {
-      display: none;
-      /*стили для открытого меню*/
-      order: 4;
-      margin-bottom: 40px;
-      padding: 0;
-      font-family: $poppins;
-      font-size: 24px;
-      line-height: 36px;
-      color: $white;
-      border-top: none;
+  @media (max-width: $tablet-width) {
+    display: none;
+    /*стили для открытого меню*/
+    order: 4;
+    margin-bottom: 40px;
+    padding: 0;
+    font-family: $poppins;
+    font-size: 24px;
+    line-height: 36px;
+    color: $white;
+    border-top: none;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.page-header__product-nav li {
+  @media (min-width: $desktop-width-only) {
+    &:hover {
+      color: $brown;
     }
 
-    @media (max-width: $mobile-width) {
-      margin-bottom: 30px;
+    &:active {
+      opacity: 0.7;
     }
+  }
 }
 
 .page-header__product-nav li:not(:last-child) {
@@ -244,6 +293,7 @@
     color: $white;
     opacity: 0.75;
   }
+
   @media (max-width: $mobile-width) {
     margin-bottom: 22px;
   }

@@ -1,37 +1,71 @@
 .filter {
-  width: 250px;
-  margin-right: auto;
+  @media (max-width: $tablet-width) {
+    position: absolute;
+    top: 27px;
+    left: 0;
+    margin-bottom: 90px;
+    padding-bottom: 40px;
+    width: 423px;
+    box-shadow: 0 5px 32px 0 rgba(219, 213, 208, 0.24);
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    width: 85%;
+  }
 }
 
 .filter__group {
   margin-bottom: 35px;
   border: 1px solid $brown;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 40px;
+    border: none;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 26px;
+  }
 }
 
 .filter__list {
-  display: none;
   @include list-style (0, 0, none);
+  display: none;
   padding-bottom: 14px;
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 12px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 9px;
+  }
 }
 
 .filter__group fieldset {
   position: relative;
   margin: 0;
-  padding: 22px 22px 0;
+  padding: 21px 22px 0;
   border: none;
 
-  &:not(:last-of-type) {
+  @media (max-width: $tablet-width) {
+    padding: 21px 18px 8px;
     border-bottom: 1px solid $brown;
   }
 
-  &::after {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    width: 17px;
-    height: 10px;
-    background: url("../img/arrow-down.svg") no-repeat;
-    content: "";
+  @media (max-width: $mobile-width) {
+    padding: 0 10px;
+  }
+
+  &:not(:last-of-type) {
+    @media (min-width: $desktop-width-only) {
+      border-bottom: 1px solid $brown;
+    }
   }
 }
 
@@ -42,7 +76,41 @@
   margin-bottom: 25px;
   font-family: $poppins;
   font-weight: 500;
+  line-height: 21px;
   cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    top: 35px;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 24px;
+    left: 9px;
+    margin-bottom: 51px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 17px;
+    height: 10px;
+    background: url("../img/arrow-down.svg") no-repeat;
+    content: "";
+
+    @media (max-width: $tablet-width) {
+      right: 22px;
+      width: 24px;
+      height: 14px;
+    }
+
+    @media (max-width: $mobile-width) {
+      top: 4px;
+      right: 19px;
+    }
+  }
 }
 
 .filter__group legend:focus {
@@ -52,6 +120,10 @@
 .filter__list li {
   position: relative;
   margin-bottom: 12px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .filter__list label {
@@ -63,6 +135,15 @@
   font-weight: 500;
   cursor: pointer;
 
+  @media (max-width: $tablet-width) {
+    padding-left: 44px;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: 52px;
+  }
+
   &::before {
     position: absolute;
     left: 13px;
@@ -70,14 +151,28 @@
     height: 15px;
     border: 1px solid $brown;
     content: "";
+
+    @media (max-width: $tablet-width) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: $mobile-width) {
+      left: 21px;
+    }
   }
 }
 
-.filter__fieldset--active .filter__list {
+.filter__range {
+  display: none;
+}
+
+.filter__fieldset--active .filter__list,
+.filter__fieldset--active .filter__range {
   display: block;
 }
 
-.filter__fieldset--active::after {
+.filter__fieldset--active legend::after {
   transform: rotate(180deg);
 }
 
@@ -102,12 +197,30 @@
   position: relative;
   margin-bottom: 9px;
   padding-top: 3px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 13px;
+    padding-top: 10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 14px;
+    padding-top: 9px;
+  }
 }
 
 .filter__range-scale {
   width: 100%;
   height: 2px;
   background-color: $grey-bg;
+
+  @media (max-width: $tablet-width) {
+    width: 82%;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+  }
 }
 
 .filter__range-bar {
@@ -115,6 +228,15 @@
   width: 90px;
   height: 2px;
   background: $brown;
+
+  @media (max-width: $tablet-width) {
+    width: 172px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 59%;
+    margin-left: 16.3%;
+  }
 }
 
 .filter__range-pin {
@@ -126,12 +248,38 @@
   border-radius: 50%;
   cursor: pointer;
 
+  @media (max-width: $tablet-width) {
+    top: 2px;
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: 2px;
+  }
+
   &--min {
     left: 48px;
+
+    @media (max-width: $tablet-width) {
+      left: 58px;
+    }
+
+    @media (max-width: $mobile-width) {
+      left: 16.3%;
+    }
   }
 
   &--max {
     right: 36px;
+
+    @media (max-width: $tablet-width) {
+      right: 135px;
+    }
+
+    @media (max-width: $mobile-width) {
+      right: 22%;
+    }
   }
 }
 
@@ -140,45 +288,140 @@
   align-items: baseline;
   padding-bottom: 16px;
   width: 100%;
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 23px;
+  }
 }
 
-.filter__price input{
+.filter__price input {
   width: 20%;
   font-family: $poppins;
   font-size: 14px;
   font-weight: 500;
   border: none;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 4px;
+  }
 }
 
 .filter__price label {
   font-family: $poppins;
   font-size: 14px;
   font-weight: 500;
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+  }
 }
 
 .filter__price-min {
   margin-left: 41px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 51px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-left: 13%;
+  }
 }
 
 .filter__price-max {
   margin-left: 53px;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 87px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-left: 29.5%;
+  }
+}
+
+.filter__buttons {
+  // for IE11
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filter__button {
   @include buttons;
 
+  @media (max-width: $tablet-width) {
+    margin-left: 21px;
+    width: 85.5%;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 84.5%;
+  }
+
   &--submit {
     color: $white;
     margin-bottom: 20px;
     background-color: $brown;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 20px;
+    }
   }
 
   &--reset {
     color: $dark;
     background-color: transparent;
+
+    &:hover {
+      background-color: $beige;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 }
 
 .filter__btn-close {
   display: none;
+
+  @media (max-width: $tablet-width) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    background-color: $black;
+    border-color: transparent;
+    border-radius: 50%;
+
+    @media (max-width: $mobile-width) {
+      transform: translate(30%, -50%);
+    }
+  }
+}
+
+.filter__btn-close svg {
+  fill: $white;
 }

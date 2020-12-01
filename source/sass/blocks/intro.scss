@@ -1,17 +1,32 @@
 .intro {
-  padding: 184px 20% 188px;
+  padding: 181px 20% 185px;
   text-align: center;
   background: #725b4b url("../img/intro-desktop.jpg") no-repeat center / cover;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/intro-desktop@2x.jpg");
+  }
 
   @media (max-width: $tablet-width) {
     background-image: url("../img/intro-tablet.jpg");
     padding-right: 22%;
     padding-bottom: 180px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/intro-tablet@2x.jpg");
+    }
   }
 
   @media (max-width: $mobile-width) {
     padding: 194px 5% 187px;
     background-image: url("../img/intro-mob.jpg");
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/intro-mob@2x.jpg");
+    }
   }
 }
 
@@ -20,7 +35,7 @@
   font-size: 45px;
   font-weight: 700;
   letter-spacing: 1.35px;
-  line-height: 50px;
+  line-height: 58px;
   text-transform: uppercase;
   color: #ffffff;
 
@@ -32,10 +47,11 @@
 }
 
 .intro p {
-  margin: 0;
+  margin: -5px 0 0;
   font-size: 38px;
   font-style: italic;
   font-weight: 400;
+  line-height: 49px;
   color: #ffffff;
 
   @media (max-width: $mobile-width) {

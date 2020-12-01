@@ -16,9 +16,9 @@
     padding-bottom: 32px;
   }
 
-   @media (max-width: $mobile-width) {
-     @include container-mobile;
-   }
+  @media (max-width: $mobile-width) {
+    @include container-mobile;
+  }
 }
 
 .page-footer__subscribe {
@@ -28,6 +28,10 @@
   @media (max-width: $tablet-width) {
     width: 100%;
   }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 47px;
+  }
 }
 
 .page-footer__subscribe h2 {
@@ -35,7 +39,7 @@
   margin: 0 0 10px;
 
   @media (max-width: $mobile-width) {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
   }
 }
 
@@ -43,6 +47,7 @@
   margin: 0 0 40px 7px;
   font-family: $poppins;
   font-weight: 400;
+  line-height: 21px;
   color: $grey;
 
   @media (max-width: $tablet-width) {
@@ -51,8 +56,8 @@
 
   @media (max-width: $mobile-width) {
     margin-left: 0;
-    margin-bottom: 36px;
-    line-height: 1.4;
+    margin-bottom: 35px;
+    line-height: 22px;
   }
 }
 
@@ -94,9 +99,24 @@
   font-family: $poppins;
   font-size: 16px;
   font-weight: 500;
+  line-height: 21px;
   color: $white;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+
+  @media (max-width: $mobile-width) {
+    top: 4px;
+    right: -1px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .page-footer__form svg {
@@ -108,18 +128,17 @@
 .page-footer ul {
   @include list-style (0, 7px 0 0 10px, none);
   font-family: $poppins;
+  line-height: 21px;
   color: $white;
 
   @media (max-width: $tablet-width) {
-    margin-top: 47px;
+    margin-top: 45px;
     margin-right: 86px;
     padding: 0;
   }
 
-  &:not(:first-of-type) {
-    @media (max-width: $mobile-width) {
-      margin-top: 0;
-    }
+  @media (max-width: $mobile-width) {
+    margin-top: 0;
   }
 
   &:not(:last-of-type) {
@@ -129,15 +148,21 @@
   }
 }
 
+.page-footer--catalog .page-footer__about {
+  @media (min-width: $desktop-width-only) {
+    margin-right: 2%;
+  }
+}
 
 .page-footer__info li,
 .page-footer__about li,
 .page-footer__social li {
-  margin-bottom: 22px;
+  margin-bottom: 21px;
 }
 
 .page-footer__social {
   @media (max-width: $mobile-width) {
+    margin-top: 2px;
     display: flex;
   }
 }
@@ -174,4 +199,12 @@
 
 .page-footer a {
   color: inherit;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }

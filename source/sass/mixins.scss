@@ -25,6 +25,7 @@
   font-size: 34px;
   font-weight: 700;
   letter-spacing: 1px;
+  line-height: 44px;
 }
 
 @mixin buttons {
@@ -37,4 +38,21 @@
   font-size: 16px;
   font-weight: 500;
   border: solid 1px #a87b62;
+  cursor: pointer;
+}
+
+@mixin more-link {
+  font-family: $poppins;
+  line-height: 21px;
+  color: $dark;
+  border-bottom: 1px solid $brown;
+
+  &:hover {
+    color: $brown;
+  }
+
+  &:active {
+    color: $brown;
+    opacity: 0.7;
+  }
 }

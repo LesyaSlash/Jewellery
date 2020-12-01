@@ -1,6 +1,8 @@
 .blog {
   @include container-desktop;
   padding-bottom: 120px;
+  max-width: 1600px;
+  margin: 0 auto;
   text-align: center;
 
   @media (max-width: $tablet-width) {
@@ -10,7 +12,7 @@
 
   @media (max-width: $mobile-width) {
     @include container-mobile;
-    padding-bottom: 60px;
+    padding-bottom: 58px;
   }
 }
 
@@ -25,10 +27,8 @@
 }
 
 .blog a {
+  @include more-link;
   padding-bottom: 4px;
-  font-family: $poppins;
-  color: inherit;
-  border-bottom: 1px solid $brown;
 
   @media (max-width: $tablet-width) {
     padding-bottom: 2px;
@@ -47,7 +47,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-top: 55px;
+    margin-top: 53px;
   }
 }
 
@@ -71,7 +71,6 @@
   }
 
   @media (max-width: $mobile-width) {
-    //flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -126,6 +125,9 @@
 
 .blog__lead {
   flex-grow: 1;
+  flex-shrink: 0;
+  // for IE11
+  flex-basis: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,6 +141,7 @@
 
   @media (max-width: $mobile-width) {
     max-width: 295px;
+    flex-basis: 100%;
     padding: 45px 61px 51px;
   }
 }
@@ -168,13 +171,19 @@
   margin-bottom: 13px;
   font-family: $poppins;
   font-size: 14px;
+  line-height: 18px;
   color: $grey;
 }
 
 .blog__lead h3 {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 37px;
   font-size: 26px;
   font-weight: 600;
+  line-height: 34px;
   color: $black;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 38px;
+  }
 }
