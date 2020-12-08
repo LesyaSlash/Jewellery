@@ -11,7 +11,7 @@
   <link rel="preload" href="fonts/poppins-400.woff2" as="font">
 </head>
 <body>
-  <header class="page-header page-header--card">
+  <header class="page-header page-header--card page-header--no-js">
     <div class="page-header__wrapper">
       <button class="page-header__toggle toggle" type="button">
         <span class="visually-hidden">Открыть меню</span>
@@ -30,10 +30,11 @@
           <span class="visually-hidden">Search</span>
         </button>
         <label>
+          <span class="visually-hidden">Type something to search</span>
           <input type="search" name="search" placeholder="Type here to search">
         </label>
       </form>
-      <a class="page-header__logo" href="index.html">
+      <a class="page-header__logo" href="index.html" aria-label="Logotype">
         <svg width="66" height="66">
           <use xlink:href="img/sprite.svg#logo"></use>
         </svg>
@@ -41,7 +42,7 @@
       <a class="page-header__login" href="login.html">
         Login
       </a>
-      <a class="page-header__cart" href="cart.html">
+      <a class="page-header__cart" href="#" aria-label="Go to cart">
         <span>Cart</span> <span>0</span>
         <svg width="20" height="18">
           <use xlink:href="img/sprite.svg#icon-cart"></use>
@@ -164,7 +165,7 @@
         </div>
         <div class="card__cart">
           <div class="card__add-wrapper">
-            <a class="card__add" href="#">Add to cart</a>
+            <a class="card__add" href="cart.html">Add to cart</a>
           </div>
           <p>
             <span>14 Day Returns</span>
@@ -411,7 +412,8 @@
       <p>News and updates from CH. No&nbsp;spam, we&nbsp;promise.</p>
       <form class="page-footer__form" action="https://echo.htmlacademy.ru" method="GET">
         <label>
-          <input type="email" placeholder="Your E-mail">
+          <span class="visually-hidden">Enter your E-mail</span>
+          <input type="email" name="mail" placeholder="Your E-mail">
         </label>
         <button type="submit">
           <span>Sign Up</span>

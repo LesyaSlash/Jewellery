@@ -1,8 +1,9 @@
 .promo {
-  @include container-desktop;
-  padding-top: 114px;
-  padding-bottom: 114px;
-  max-width: 1600px;
+  //@include container-desktop;
+  padding: 114px 15px;
+  //padding-top: 114px;
+  //padding-bottom: 114px;
+  max-width: 1202px;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -96,7 +97,7 @@
   }
 
   &--prev {
-    left: 82px;
+    left: 0;
 
     @media (max-width: $tablet-width) {
       left: 45px;
@@ -104,11 +105,13 @@
   }
 
   &--next {
-    right: 97px;
+    right: 15px;
+    top: 158px;
     transform: rotate(180deg);
 
     @media (max-width: $tablet-width) {
       right: 43px;
+      top: 108px;
     }
   }
 }
@@ -117,10 +120,16 @@
   top: 44px;
 
   &--prev {
-    left: 7.1%;
+    left: 1.2%;
 
     @media (max-width: $tablet-width) {
       left: 45px;
+    }
+  }
+
+  &--next {
+    @media (max-width: $tablet-width) {
+      top: 39px;
     }
   }
 }
@@ -201,6 +210,7 @@
   font-family: $poppins;
   font-weight: 500;
   line-height: 21px;
+  color: $grey;
   cursor: pointer;
 
   &:hover {
@@ -224,4 +234,8 @@
       margin-left: 10px;
     }
   }
+}
+
+.promo__indicators .swiper-pagination-bullet-active {
+  color: $dark;
 }

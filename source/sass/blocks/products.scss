@@ -9,21 +9,25 @@
 .products__item {
   text-align: center;
   margin-bottom: 35px;
+  width: 31%;
+  max-width: 270px;
 
   @media (max-width: $tablet-width) {
-    width: 206px;
+    min-width: 206px;
+    width: 31%;
   }
 
   @media (max-width: $mobile-width) {
-    width: 130px;
+    min-width: 130px;
+    max-width: 310px;
+    width: 44%;
     margin-bottom: 26px;
   }
+}
 
-  &:last-of-type {
-    @media (min-width: 710px) and (max-width: 767px) {
-      margin-right: auto;
-      margin-left: 1.5%;
-    }
+.products__item img {
+  @media (max-width: $mobile-width) {
+    width: 100%;
   }
 }
 

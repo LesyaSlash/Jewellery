@@ -46,11 +46,15 @@
 
   @media (max-width: $tablet-width) {
     grid-template-rows: 129px 110px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 680px;
     min-height: auto;
   }
 
   @media (max-width: $mobile-width) {
     margin-top: 51px;
+    width: 290px;
     grid-template-columns: 50% 50%;
     grid-template-rows: 130px 102px 130px;
   }

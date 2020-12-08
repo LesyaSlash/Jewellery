@@ -58,9 +58,14 @@
 .faq__question {
   position: relative;
   margin-bottom: 9px;
+  padding: 0;
+  width: 100%;
   font-family: $poppins;
   font-size: 18px;
   line-height: 23px;
+  text-align: left;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
 
   &::after {

@@ -238,7 +238,7 @@
   };
 
   if (accordionFilter) {
-    var accordionFilters = accordionFilter.querySelectorAll('legend');
+    var accordionFilters = accordionFilter.querySelectorAll('.filter__legend');
     for (var k = 0; k < accordionFilters.length; k++) {
       var filter = accordionFilters[k];
       filter.addEventListener('click', accordionFilterCallback);

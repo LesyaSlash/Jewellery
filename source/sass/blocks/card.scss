@@ -7,6 +7,10 @@
   padding-bottom: 120px;
   border-top: 1px solid #f6f5f4;
 
+  @media (min-width: 1400px) {
+    justify-content: center;
+  }
+
   @media (max-width: $tablet-width) {
     @include container-tablet;
     padding-top: 20px;
@@ -16,7 +20,7 @@
 
   @media (max-width: $mobile-width) {
     @include container-mobile;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-top: 0;
     padding-bottom: 56px;
   }
@@ -42,7 +46,7 @@
   @media (max-width: $mobile-width) {
     position: relative;
     margin: 0 auto 40px;
-    width: 100%;
+    width: 290px;
   }
 }
 
@@ -116,7 +120,8 @@
   }
 
   @media (max-width: $mobile-width) {
-    width: 100%;
+    width: 290px;
+    margin: 0 auto;
   }
 }
 
@@ -233,7 +238,6 @@
   }
 
   @media (max-width: $tablet-width) {
-    width: 319px;
     margin-top: 51px;
     margin-bottom: 15px;
   }

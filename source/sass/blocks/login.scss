@@ -68,6 +68,12 @@
   }
 }
 
+.login__form {
+  @media (min-width: $desktop-width-only) {
+    text-align: right;
+  }
+}
+
 .login__form input {
   padding-top: 5px;
   padding-bottom: 10px;
@@ -75,6 +81,8 @@
   background: transparent;
   border: none;
   border-bottom: 1px solid $dark;
+  border-radius: 0;
+
 
   @media (max-width: $tablet-width) {
     width: 97%;
@@ -102,7 +110,7 @@
 }
 
 .login__form a {
-  display: block;
+  display: inline-block;
   margin-top: 7px;
   text-align: right;
   font-family: $poppins;

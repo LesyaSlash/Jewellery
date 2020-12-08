@@ -53,9 +53,11 @@
 .catalog__wrapper {
   @include container-desktop;
   display: flex;
+  justify-content: space-between;
   padding-top: 80px;
   margin: 0 auto;
   max-width: 1600px;
+  border-bottom: 1px solid $grey-bg;
 
   @media (max-width: $tablet-width) {
     @include container-tablet;
@@ -112,12 +114,10 @@
 }
 
 .catalog__navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  margin: 0 auto;
+  max-width: 1600px;
   padding: 35px 7.2% 74px 29.2%;
   line-height: 21px;
-  border-top: 1px solid $grey-bg;
 
   @media (max-width: $tablet-width) {
     padding-left: 5.8%;
@@ -125,9 +125,20 @@
   }
 
   @media (max-width: $mobile-width) {
-    justify-content: center;
     padding-top: 17px;
     padding-bottom: 63px;
+  }
+}
+
+.catalog__navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1010px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-width) {
+    justify-content: center;
   }
 }
 
