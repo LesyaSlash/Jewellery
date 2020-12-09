@@ -54,7 +54,7 @@
   border: none;
 
   @media (max-width: $tablet-width) {
-    padding: 21px 18px 8px;
+    padding: 34px 18px 8px;
     border-bottom: 1px solid $brown;
   }
 
@@ -84,8 +84,7 @@
   cursor: pointer;
 
   @media (max-width: $tablet-width) {
-    top: 35px;
-    margin-bottom: 40px;
+    margin-bottom: 26px;
     font-size: 18px;
   }
 
@@ -105,7 +104,7 @@
     content: "";
 
     @media (max-width: $tablet-width) {
-      right: 22px;
+      right: 24px;
       width: 24px;
       height: 14px;
     }
@@ -174,11 +173,14 @@
 }
 
 .filter__fieldset--active .filter__list,
-.filter__fieldset--active .filter__range {
+.filter__fieldset--active .filter__range,
+.catalog--no-js .filter__list,
+.catalog--no-js .filter__range {
   display: block;
 }
 
-.filter__fieldset--active .filter__legend::after {
+.filter__fieldset--active .filter__legend::after,
+.catalog--no-js .filter__legend::after {
   transform: rotate(180deg);
 }
 
@@ -237,6 +239,7 @@
 
   @media (max-width: $tablet-width) {
     width: 172px;
+    margin-left: 22%;
   }
 
   @media (max-width: $mobile-width) {
@@ -342,11 +345,11 @@
   margin-left: 21%;
 
   @media (max-width: $tablet-width) {
-    margin-left: 87px;
+    margin-left: 67px;
   }
 
   @media (max-width: $mobile-width) {
-    margin-left: 29.5%;
+    margin-left: 24.5%;
   }
 }
 
@@ -430,4 +433,27 @@
 
 .filter__btn-close svg {
   fill: $white;
+}
+
+.catalog--no-js .filter {
+  @media (max-width: $tablet-width) {
+    position: static;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 90px;
+    padding-bottom: 40px;
+    width: 423px;
+    box-shadow: none;
+  }
+
+  @media (max-width: $mobile-width) {
+    transform: translate(0);
+    width: 85%;
+  }
+}
+
+.catalog--no-js .filter__btn-close {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
 }

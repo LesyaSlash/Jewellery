@@ -137,7 +137,9 @@
   if (filterOverlay) {
     var filter = filterOverlay.querySelector('.filter');
     var filterClose = filter.querySelector('.filter__btn-close');
+    var catalog = document.querySelector('.catalog');
 
+    catalog.classList.remove('catalog--no-js');
     filter.addEventListener('click', function (evt) {
       onlyOverlayClick(evt);
     });

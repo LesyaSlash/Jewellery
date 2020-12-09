@@ -188,3 +188,24 @@
     display: none;
   }
 }
+
+.catalog--no-js .catalog__filter {
+  @media (max-width: $tablet-width) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.catalog--no-js .catalog__filter-btn {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.catalog--no-js .catalog__wrapper {
+  @media (max-width: $tablet-width) {
+    flex-wrap: wrap;
+  }
+}
