@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="The most beaty jewellery">
+  <title>Ch Jewellery</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font">
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font">
+</head>
+<body>
+  <main class="page-main">
+    <div class="cart modal modal--open">
+      <div class="cart__wrapper modal__wrapper">
+        <h2>The item was added to your cart</h2>
+        <div class="cart__product">
+          <picture>
+            <!-- 320    1х: 70px; 2x: 140px-->
+            <!-- 768    1х: 88px; 2x: 176px-->
+            <!-- 1024    1х: 84px; 2x: 168px-->
+            <source type="image/webp" media="(max-width: 767px)" srcset="img/necklace-cart-mob.webp 1x, img/necklace-cart-mob@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1023px)" srcset="img/necklace-cart-tablet.webp 1x, img/necklace-cart-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/necklace-cart-desktop.webp 1x, img/necklace-cart-desktop@2x.webp 2x">
+
+            <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-mob@2x.jpg 2x">
+            <source media="(max-width: 767px)" srcset="img/necklace-cart-mob.jpg 1x, img/necklace-cart-tablet@2x.jpg 2x">
+            <img src="img/necklace-cart-desktop.jpg" srcset="img/necklace-cart-desktop@2x.jpg" width="84" height="79" alt="Product photo">
+          </picture>
+          <div class="cart__info">
+            <h3>Gold Necklace </h3>
+            <p>$ 115</p>
+          </div>
+          <div class="cart__amount">
+            <button type="button" aria-label="Plus button">
+              <svg width="14" height="14">
+                <use xlink:href="img/sprite.svg#icon-plus"></use>
+              </svg>
+            </button>
+            <span>1</span>
+            <button type="button" aria-label="Minus button">
+              <svg width="14" height="14">
+                <use xlink:href="img/sprite.svg#icon-minus"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="cart__total">
+          <p>You have 1 item in the cart</p>
+          <p>Cart subtotal: $ 115</p>
+        </div>
+        <div class="cart__buttons">
+          <a href="catalog.html">Continue shopping</a>
+          <a href="cart.html">Checkout</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
