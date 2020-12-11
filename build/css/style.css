@@ -301,11 +301,13 @@ img {
   font-size: 14px;
   line-height: 18px;
   color: inherit; }
-  .page-header__login:hover {
-    color: #a87b62; }
-  .page-header__login:active {
-    color: #a87b62;
-    opacity: 0.7; }
+  @media (min-width: 1024px) {
+    .page-header__login:hover {
+      color: #a87b62; } }
+  @media (min-width: 1024px) {
+    .page-header__login:active {
+      color: #a87b62;
+      opacity: 0.7; } }
   @media (max-width: 1023px) {
     .page-header__login {
       display: none;
